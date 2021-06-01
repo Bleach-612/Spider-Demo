@@ -133,14 +133,12 @@ class ChinazSpider:
                     del data['domain']
                     del data["add_time"]
                     print(data)
-                    DomainsInfo.update(data).execute()
+                    DomainsInfo.update(data).where(DomainsInfo.domain == domain).execute()
 
 
 if __name__ == '__main__':
     spider = ChinazSpider()
     spider.run()
-
-
 
 
 
